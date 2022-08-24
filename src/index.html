@@ -14,24 +14,19 @@
       <section class="table-container">
         <div class="top-bar">
           <h2>Recent Scores</h2>
-          <button type="button">Refresh</button>
+          <button class="refresh" type="button">Refresh</button>
         </div>
         <div class="table">
           <ul class="list">
-            <li class="odd">Name:100</li>
-            <li class="even">Name:100</li>
-            <li class="odd">Name:100</li>
-            <li class="even">Name:100</li>
-            <li class="odd">Name:100</li>
-            <li class="even">Name:100</li>
           </ul>
         </div>
       </section>
       <section class="table-input">
         <h2>Add Your score</h2>
         <form class="form">
-          <input type="text" name="name" placeholder="Your name">
-          <input type="text" name="score" placeholder="Your score">
+          <p class="report"></p>
+          <input type="text" class="name" name="name" placeholder="Your name" id="name">
+          <input type="text" class="score" name="score" placeholder="Your score" id="score">
           <button type="submit">Submit</button>
         </form>
       </section>

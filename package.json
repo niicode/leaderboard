@@ -21,6 +21,7 @@
   "homepage": "https://github.com/niicode/leaderboard#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.26.0",
@@ -36,6 +37,7 @@
   "dependencies": {
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "dotenv": "^16.0.1",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1"
   }
