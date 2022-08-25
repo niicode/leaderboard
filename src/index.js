@@ -12,14 +12,15 @@ const renderScores = () => {
   const scores = service.getGameScores();
   scores.then((data) => {
     const list = data.result.sort((a, b) => b.score - a.score);
-    const listHTML = list.map((item) => `<li>${item.user}: ${item.score}</li>`).join('');
+    const listHTML = list.map((item) => `<li>⚽ ${item.user.toUpperCase()}: ${item.score}</li>`).join('');
     listUl.innerHTML = listHTML;
+    listUl.childNodes.forEach((item, index) => {
+      if (index % 2 === 1) {
+        item.classList.add('even');
+      }
+    });
   });
-  for (let i = 0; i < listUl.children.length; i += 1) {
-    if (listUl.children[i] % 2 === 0) {
-      listUl.children[i].classList.add('even');
-    }
-  }
+  listUl.innerHTML = '<li>Loading...</li>';
 };
 
 form.addEventListener('submit', (e) => {
@@ -29,8 +30,10 @@ form.addEventListener('submit', (e) => {
   service.addGameScore(name, score).then((data) => {
     if (data.result === 'Leaderboard score created correctly.') {
       report.innerHTML = 'Great you added successfully';
+      report.style.padding = '1rem';
       setTimeout(() => {
         report.innerHTML = '';
+        report.style.padding = '0';
       }, 3000);
       form.reset();
     } else {

@@ -1,6 +1,4 @@
 export default class Services {
-  list = JSON.parse(localStorage.getItem('scores')) || [];
-
   getGameScores = () => new Promise((resolve, reject) => {
     fetch(`${process.env.Base_URL}games/${process.env.Game_ID}/scores`)
       .then((response) => response.json())
