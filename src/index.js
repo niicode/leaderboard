@@ -43,3 +43,4 @@ form.addEventListener('submit', (e) => {
 });
 
 refresh.addEventListener('click', renderScores);
+exports.renderScores = renderScores;
